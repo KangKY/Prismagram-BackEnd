@@ -1,0 +1,47 @@
+{
+  "name": "Prismagram",
+  "version": "1.0.0",
+  "description": "Instagram clone with Express + Prisma + GraphQL + ReactJS",
+  "main": "index.js",
+  "repository": "https://github.com/KangKY/Prismagram",
+  "author": "Kang_KI <ruddlf4933@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "10.13.x",
+    "npm": "6.4.x"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
+    "aws-sdk": "^2.451.0",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "graphql-tools": "^4.0.4",
+    "graphql-yoga": "^1.17.4",
+    "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.5.8",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "nodemailer": "^6.0.0",
+    "nodemailer-sendgrid": "^1.0.3",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "prisma-client-lib": "^1.29.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "deploy": "prisma deploy --force",
+    "generate": "prisma generate",
+    "prisma": "yarn run deploy && yarn run generate",
+    "dev": "nodemon --exec babel-node src/server.js",
+    "start": "node build/server.js",
+    "prebuild": "yarn run generate",
+    "build": "babel src -d build",
+    "postbuild": "cd src && npx copy ./api/**/*.graphql ../build/api/"
+  }
+}

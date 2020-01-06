@@ -1,0 +1,98 @@
+type User {
+    id: ID! 
+    username: String! 
+    email: String! 
+    avatar : String
+    firstName : String
+    lastName : String
+    fullName : String
+    isFollowing: Boolean!
+    itsMe : Boolean!
+    bio : String
+    following: [User!]! 
+    followingCount: Int!
+    followers: [User!]! 
+    followersCount: Int!
+    posts:[Post!]!
+    postsCount: Int!
+    likes : [Like!]!
+    comments : [Comment!]!
+    chats : [Chat!]!
+    loginSecret : String!
+    createdAt: String
+    updatedAt: String
+}
+
+type Post {
+    id: ID! 
+    files : [File]!
+    location : String
+    user : User!
+    caption : String!
+    likes : [Like!]!
+    likeCount: Int!
+    commentCount: Int!
+    isMine : Boolean!
+    comments : [Comment!]!
+    recentcomments : [Comment!]!
+    isLiked : Boolean!
+    createdAt : String
+    updatedAt : String
+}
+
+type Like {
+    id: ID! 
+    user : User!
+    post : Post!
+    comment : Comment
+    createdAt: String
+    updatedAt: String
+}
+
+type Comment {
+    id: ID!
+    text : String!
+    user : User!
+    post : Post!
+    likes : [Like!]!
+    isLiked : Boolean!
+    parent : Comment
+    tag : User
+    recomments : [Comment]
+    recommentCount : Int!
+    likeCount : Int!
+    seq : Int
+    createdAt: String
+    updatedAt: String
+}
+
+type File {
+    id: ID!
+    url : String!
+    post : Post!
+    createdAt: String
+    updatedAt: String
+}
+
+type Chat {
+    id: ID!
+    participants : [User!]!
+    messages: [Message!]!
+    createdAt: String
+    updatedAt: String
+}
+
+type Message {
+    id: ID!
+    text : String!
+    from : User! 
+    to : User!
+    chat : Chat!
+    createdAt: String
+    updatedAt: String
+}
+
+type UserProfile {
+    user: User!
+    posts : [Post!]!
+}
