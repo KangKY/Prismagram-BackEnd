@@ -1,5 +1,5 @@
 {
-  "name": "Prismagram",
+  "name": "secondfamily",
   "version": "1.0.0",
   "description": "Instagram clone with Express + Prisma + GraphQL + ReactJS",
   "main": "index.js",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "engines": {
     "node": "12.9.x",
-    "npm": "6.13.x"
+    "npm": "6.4.x"
   },
   "dependencies": {
     "@babel/cli": "^7.8.4",
