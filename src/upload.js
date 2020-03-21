@@ -39,7 +39,7 @@ const multerPost = multer({
 
 
 export const uploadAvatar = multerAvatar.single("avatar");
-export const uploadPost = multerPost.array("post");
+export const uploadPost = multerPost.single("post");
 
 export const uploadController = (req, res) => {
   if(!req.file) {
@@ -48,11 +48,9 @@ export const uploadController = (req, res) => {
     const {
       file
     } = req;
-    console.log(req.file);
-    
-    const location = file.location.replace("https://second-family.s3.ap-northeast-2.amazonaws.com", "https://d3a202416judqc.cloudfront.net")
-    console.log(location);
-    
+
+    const location = file.location.replace("https://second-family.s3.ap-northeast-2.amazonaws.com", "https://d3a202416judqc.cloudfront.net");
+    //const location = file.location;
     res.json({ location });
   }
 };
@@ -67,7 +65,6 @@ export const uploadMultiController = (req, res) => {
       const location = file.location.replace("https://second-family.s3.ap-northeast-2.amazonaws.com", "https://d3a202416judqc.cloudfront.net")
       locations.push(location);
     });
-    console.log(locations);
     res.send(locations);
   }
 };
