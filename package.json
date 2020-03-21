@@ -7,7 +7,7 @@
   "author": "Kang_KI <ruddlf4933@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "12.9.x",
+    "node": "10.13.x",
     "npm": "6.4.x"
   },
   "dependencies": {
