@@ -7,8 +7,10 @@ export default {
       return await prisma.posts({
         where: {
           OR: [
-            { location_starts_with : term },
-            { caption_starts_with: term }
+            { location_contains : term },
+            { caption_contains : term },
+            { location_contains : term.toLowerCase() },
+            { caption_contains : term.toLowerCase() },
           ]
         }
       });

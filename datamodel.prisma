@@ -2,6 +2,8 @@ type User {
     id: ID! @id
     username: String! @unique
     email: String! @unique
+    password: String!
+    salt:String
     avatar : String @default(value:"https://scontent-iad3-1.cdninstagram.com/vp/387fa21cd5bf622c7998d49455183647/5D2CF3F1/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com")
     firstName : String @default(value:"")
     lastName : String @default(value:"")
