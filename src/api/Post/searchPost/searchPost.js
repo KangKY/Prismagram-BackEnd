@@ -12,7 +12,8 @@ export default {
             { location_contains : term.toLowerCase() },
             { caption_contains : term.toLowerCase() },
           ]
-        }
+        },
+        orderBy:"createdAt_DESC"
       });
     }
   }
