@@ -7,6 +7,7 @@ export default {
     recentcomments :({ id }) => prisma.post({ id }).comments({last:2}),
     user: ({ id }) => prisma.post({ id }).user(),
     likes: ({ id }) => prisma.post({ id }).likes(),
+    reviews: ({ id }) => prisma.post({ id }).reviews(),
     isLiked: (parent, _, { request }) => {
       const { user } = request;
       const { id } = parent;
