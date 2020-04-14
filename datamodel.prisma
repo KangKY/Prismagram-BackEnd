@@ -43,6 +43,7 @@ type Like {
     user : User @relation(name: "LikesOfUser")
     post : Post @relation(name: "LikeOfPost")
     comment : Comment @relation(name: "LikeOfComment")
+    review : Review @relation(name: "LikeOfReview")
     createdAt: DateTime! @createdAt
     updatedAt: DateTime! @updatedAt
 }
@@ -105,7 +106,7 @@ type Review {
   rating: Float!
   user : User @relation(name: "ReviewsOfUser")
   post : Post @relation(name: "ReviewsOfPost")
-  likes : [Like!]! @relation(name: "LikeOfComment" onDelete: CASCADE)
+  likes : [Like!]! @relation(name: "LikeOfReview" onDelete: CASCADE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
