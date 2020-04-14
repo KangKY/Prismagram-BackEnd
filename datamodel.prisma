@@ -105,6 +105,7 @@ type Review {
   rating: Float!
   user : User @relation(name: "ReviewsOfUser")
   post : Post @relation(name: "ReviewsOfPost")
+  likes : [Like!]! @relation(name: "LikeOfComment" onDelete: CASCADE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

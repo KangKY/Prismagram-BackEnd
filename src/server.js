@@ -11,7 +11,7 @@ import {
   uploadPost,
   uploadController
 } from "./upload";
-import { upgradeBase64crypto } from "./utils";
+import { cronJob } from "./cronjob";
 
 //sendSecretMail("ruddlf4933@trizcorp.com", "123");
 
@@ -36,6 +36,7 @@ server.express.use(authenticateJwt);
 server.express.post("/api/user/upload", uploadAvatar, uploadController);
 server.express.post("/api/post/upload", uploadPost, uploadController);
 
+//cronJob();
 //console.log(generatePW, generateSalt);
 
 server.start({ port: PORT }, () =>

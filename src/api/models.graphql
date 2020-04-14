@@ -29,6 +29,8 @@ type Post {
     location : String
     user : User!
     caption : String!
+    reviews : [Review!]!
+    reviewCount: Int!
     likes : [Like!]!
     likeCount: Int!
     commentCount: Int!
@@ -64,6 +66,17 @@ type Comment {
     seq : Int
     createdAt: String
     updatedAt: String
+}
+
+type Review {
+  id: ID! 
+  text : String
+  rating: Float!
+  user : User 
+  post : Post 
+  likes:[Like!]!
+  createdAt: String
+  updatedAt: String
 }
 
 type File {

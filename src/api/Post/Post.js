@@ -49,6 +49,13 @@ export default {
         })
         .aggregate()
         .count(),
+    reviewCount: parent =>
+      prisma
+        .reviewsConnection({
+          where: { post: { id: parent.id } }
+        })
+        .aggregate()
+        .count(),
     commentCount: parent =>
       prisma
         .commentsConnection({

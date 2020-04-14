@@ -8,6 +8,7 @@ export default {
     likes: ({ id }) => prisma.user({ id }).likes(),
     comments: ({ id }) => prisma.user({ id }).comments(),
     chats: ({ id }) => prisma.user({ id }).chats(),
+    ourChat: ({ id }, _, { request }) => prisma.user({ id }).chats({where:{participants_every:[id, request.user.id]}}),
     followingCount: ({ id }) =>
       prisma
         .usersConnection({ where: { followers_some: { id } } })
