@@ -18,6 +18,7 @@ type User {
     likes : [Like!]!
     comments : [Comment!]!
     chats : [Chat!]!
+    ourChat: [Chat!]!
     loginSecret : String!
     createdAt: String
     updatedAt: String

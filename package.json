@@ -7,8 +7,8 @@
   "author": "Kang_KI <ruddlf4933@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "12.16.x",
-    "npm": "6.13.x"
+    "node": "10.x.x",
+    "npm": "6.x.x"
   },
   "dependencies": {
     "@babel/cli": "^7.8.4",
